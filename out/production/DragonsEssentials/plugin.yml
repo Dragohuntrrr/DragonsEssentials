@@ -1,0 +1,55 @@
+main: me.dragonhuntrrr.dragonsEssentials.Main
+author: Dragonhuntrrr
+version: 1.0.0
+name: DragonsEssentials
+
+commands:
+  gamemode:
+    description: Set users gamemode
+    aliases:
+      - gm
+
+  permban:
+    description: Permanently bans a player, and its IP adress from the server
+    aliases:
+      - ban
+
+  tempban:
+    description: Bans a player, and its IP adress from the server for a limited amount of time
+    aliases:
+      - tban
+
+  trade:
+    description: Trade player
+
+
+
+
+permissions:
+  draonsEssentials.*:
+    description: Access to all DragonEssentials commands and permissions
+    default: op
+    children:
+      dragonsEssentials.command.*: true
+
+  dragonsEssentials.command.*:
+    description: Access to all commands
+    children:
+     dragonsEssentials.command.gamemode.*: true
+
+  dragonsEssentials.command.gamemode:
+    description: Acces to all gamemode commands
+
+  dragonEssentials.trade.*:
+    description: Allow player to use all trade commands
+    children:
+      dragonsEssentials.trade.send: true
+
+  dragonsEssentials.trade.send:
+    description: Permission to send trade request
+
+  dragonsEssentials.trade.accept:
+    description: Permission to accept trade request
+
+
+
